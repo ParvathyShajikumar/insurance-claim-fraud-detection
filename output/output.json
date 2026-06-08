@@ -1,0 +1,65 @@
+[
+  {
+    "record1": {
+      "claim_id": "0000001001",
+      "customer_name": "Ravi Kumar",
+      "claim_date": "20240501",
+      "hospital": "Aster Hospital",
+      "amount": "000050000",
+      "policy_number": "POL000001"
+    },
+    "record2": {
+      "claim_id": "0000001002",
+      "customer_name": "R Kumar",
+      "claim_date": "20240501",
+      "hospital": "Aster Medcity",
+      "amount": "000050000",
+      "policy_number": "POL000001"
+    },
+    "similarity_score": 0.71,
+    "analysis": {
+      "duplicate_claim": true,
+      "possible_fraud": true,
+      "fraud_indicators": [
+        "Same policy number with different claim IDs",
+        "Similar customer names (Ravi Kumar vs R Kumar)",
+        "Identical claim date (20240501)",
+        "Same claim amount (50,000)",
+        "Similar hospital names (Aster Hospital vs Aster Medcity)"
+      ],
+      "recommended_action": "INVESTIGATE_IMMEDIATELY"
+    }
+  },
+  {
+    "record1": {
+      "claim_id": "0000001003",
+      "customer_name": "Anu Menon",
+      "claim_date": "20240415",
+      "hospital": "Lakeshore",
+      "amount": "000025000",
+      "policy_number": "POL000002"
+    },
+    "record2": {
+      "claim_id": "0000001004",
+      "customer_name": "Anu Menon",
+      "claim_date": "20240415",
+      "hospital": "Lakeshore",
+      "amount": "000025000",
+      "policy_number": "POL000002"
+    },
+    "similarity_score": 1.0,
+    "analysis": {
+      "duplicate_claim": true,
+      "possible_fraud": true,
+      "fraud_indicators": [
+        "identical customer name",
+        "same claim date",
+        "same hospital",
+        "identical claim amount",
+        "same policy number",
+        "only claim_id differs"
+      ],
+      "recommended_action": "immediate_investigation"
+    }
+  }
+]
